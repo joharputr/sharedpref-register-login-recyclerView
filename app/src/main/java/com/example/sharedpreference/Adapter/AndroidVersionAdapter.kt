@@ -5,13 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.sharedpreference.R
-import com.example.sharedpreference.model.Bola
+import com.example.sharedpreference.model.AndroidVersion
 import kotlinx.android.synthetic.main.item_data.view.*
 
-class BolaAdapter(private  val bolaList: List<Bola>,
-                  private  val onClick:(bola:Bola)->Unit,
-                  private val onLongClick:(bola:Bola)->Unit
-): RecyclerView.Adapter<BolaAdapter.Holder>() {
+class AndroidVersionAdapter(private  val androidVersionList: List<AndroidVersion>,
+                            private  val onClick:(androidVersion: AndroidVersion)->Unit
+
+): RecyclerView.Adapter<AndroidVersionAdapter.Holder>() {
 
 
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int):Holder {
@@ -21,29 +21,26 @@ class BolaAdapter(private  val bolaList: List<Bola>,
     }
 
     override fun getItemCount(): Int {
-        return bolaList.size
+        return androidVersionList.size
     }
 
 
     override fun onBindViewHolder(p0:Holder, pos: Int) {
-        val bola = bolaList[pos]
+        val androidVersion = androidVersionList[pos]
         //bind itu apa
-        p0.bind(bola)
+        p0.bind(androidVersion)
         p0.itemView.setOnClickListener {
-            onClick(bola)
+            onClick(androidVersion)
         }
-        p0.itemView.setOnLongClickListener {
-            onLongClick(bola)
-            return@setOnLongClickListener true
-        }
+
 
     }
     class Holder(itemView: View) :RecyclerView.ViewHolder(itemView) {
 
-        fun bind(bola: Bola) = itemView.run {
-            nama.text = bola.nama
-            password.text = bola.password
-
+        fun bind(androidVersion: AndroidVersion) = itemView.run {
+            version.text = androidVersion.nama
+            type.text = androidVersion.password
+            api.text = androidVersion.version
         }
 
     }

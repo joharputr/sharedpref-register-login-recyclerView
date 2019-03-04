@@ -4,31 +4,28 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.widget.Toast
-import com.example.sharedpreference.Adapter.BolaAdapter
+import com.example.sharedpreference.Adapter.AndroidVersionAdapter
 import com.example.sharedpreference.App
 import com.example.sharedpreference.R
-import com.example.sharedpreference.common.toast
-import com.example.sharedpreference.model.Bola
+import com.example.sharedpreference.model.AndroidVersion
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
     val bolaList = listOf(
-        Bola("${App.preference.nama}", "${App.preference.password}")
+        AndroidVersion("bouget","api level 1","API level 27"),
+        AndroidVersion("marshmeleo", "apil evel 2", "API level 28")
+       // com.example.sharedpreference.model.AndroidVersion("${App.preference.nama}", "${App.preference.password}")
     )
-    val bolaAdapter = BolaAdapter(bolaList,{
-        Toast.makeText(this,"sss${it.nama}",Toast.LENGTH_SHORT).show()
-    },{
-      //  onItemLongClick(it)
+    val bolaAdapter = AndroidVersionAdapter(bolaList,{
+        Toast.makeText(this,"saya memilih ${it.nama}",Toast.LENGTH_SHORT).show()
     })
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate( savedInstanceState)
+        super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
           setupView()
-         getBola()
-      //  Viewpage()
-
+         getAndroidVersion()
     }
 
     private fun setupView(){
@@ -36,35 +33,26 @@ class MainActivity : AppCompatActivity() {
         tvBola.run {
             layoutManager = LinearLayoutManager(context)
             adapter = bolaAdapter
-            setHasFixedSize(true)
+
         }
 
     }
 
-    private fun getBola() {
+    private fun getAndroidVersion() {
         bolaList
         }
      //   bolaAdapter.notifyDataSetChanged()
 
 
-  /*  private fun onItemLongClick(it: Bola) {
+  /*  private fun onItemLongClick(it: AndroidVersionAdapter) {
         toast("LongCLick ${it.nama}")
     }
 
-    private fun onItemClick(it: Bola) {
+    private fun onItemClick(it: AndroidVersionAdapter) {
         toast("click ${it.nama}")
     }*/
 
 
-/*
-
-    private fun Viewpage() {
-        */
-/*  username.text = "nama adalah : ${App.preference.nama}"
-            password.text = "password adalah :${App.preference.password}"*//*
-
-    }
-*/
 
 
 

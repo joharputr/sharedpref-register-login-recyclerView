@@ -25,9 +25,9 @@ class login : AppCompatActivity() {
 
 
     private fun goLogin() {
-        var username = tvUserLogin.text.toString()
+        var email = tvUserLogin.text.toString()
         var password = tvPasswordLogin.text.toString()
-        if (username == App.preference.nama && password == App.preference.password){
+        if (email == App.preference.email && password == App.preference.password){
 
             Toast.makeText(this,"login berhasil",Toast.LENGTH_SHORT).show()
             startActivity(Intent(this,MainActivity::class.java))

@@ -17,38 +17,33 @@ class register : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
          setupView()
-/*
-
-        App.preference.nama = "aa"
-        println("nama : ${App.preference.nama}")
-        App.preference.password = "1111"
-
-*/
-
-      /*  var pref = App.preference
-
-
-        pref.password = "1"*/
 
     }
 
     private fun setupView() {
         register.setOnClickListener {
-            login()
+            register()
         }
     }
 
-    private fun login() {
-        var username = tvUser.text.toString()
-        var password = tvPassword.text.toString()
+    private fun register() {
+        var username = fullname.text.toString()
+        var password = pass.text.toString()
+        var university = university.text.toString()
+        var email = email.text.toString()
+        var confirmpass = confirmpassword.text.toString()
 
-        if(username == "" && password == ""){
+
+        if(username == "" && email == ""){
           message("jangan kosong bro")
         }
         else{
 
             App.preference.nama = username
             App.preference.password = password
+            App.preference.confirmpass = confirmpass
+            App.preference.email = email
+            App.preference.university = university
            message("Register Berhasil")
             startActivity(Intent(this,login::class.java))
             finish()

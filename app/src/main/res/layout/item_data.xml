@@ -1,36 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content">
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        tools:context=".activity.MainActivity">
+
+    <RelativeLayout
+            android:id="@+id/container"
+            android:layout_below="@+id/bottomNav"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        <TextView android:layout_width="match_parent"
+                  android:id="@+id/version"
+                  android:layout_height="wrap_content"
+                  tools:text="Pie"
+                  android:textStyle="bold"
+                  android:textSize="20dp"
+                  android:layout_marginLeft="@dimen/left"
+                  android:layout_marginBottom="@dimen/bottom"
+
+        />
+        <TextView android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  tools:text="android oreo"
+
+                  android:layout_below="@+id/version"
+                  android:layout_marginLeft="@dimen/left"
+
+                  android:layout_marginBottom="@dimen/bottom"
+                  android:id="@+id/type"/>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:text="Api Level 27"
+                  android:textSize="14sp"
+                  android:id="@+id/api"
+                  android:layout_marginLeft="250dp"
+                  android:layout_marginTop="20dp"
+        />
+        <View android:layout_width="wrap_content"
+              android:layout_height="1dp"
+              android:layout_below="@+id/type"
+
+              android:background="@android:color/darker_gray"/>
+    </RelativeLayout>
 
 
-    <TextView
-            android:id="@+id/nama"
+    <android.support.design.widget.BottomNavigationView
+            android:id="@+id/bottomNav"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@android:color/black"
-            android:textStyle="bold"
-            android:layout_marginTop="16dp"
-            android:maxLines="1"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:textSize="16sp"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="3dp"
+            android:background="@color/colorPrimary"
+            app:itemIconTint="@android:color/white"
+            app:itemTextColor="@android:color/white"
+          />
 
-            tools:text="Dzumafo"/>
-
-    <TextView
-            android:id="@+id/password"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:layout_marginLeft="16dp"
-            tools:text="dzumafo@gmail.com"/>
-
-    <View
-            android:layout_width="match_parent"
-            android:layout_height="0.6dp"
-            android:background="#ddd"/>
-
-
-</LinearLayout>
+</RelativeLayout>

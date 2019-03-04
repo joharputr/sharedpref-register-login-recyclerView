@@ -23,9 +23,28 @@ class preferenceHelper (app : Context){
         spE.putString(constant.NAMA,value).apply()
     }
         get() = sp.getString(constant.NAMA, "")?:""
+
     var password :String
         set(value) {
             spE.putString(constant.PASSWORD,value).apply()
         }
         get() = sp.getString(constant.PASSWORD, "")?:""
+
+    var email :String
+        set(value) {
+            spE.putString(constant.EMAIL,value).apply()
+        }
+        get() = sp.getString(constant.EMAIL, "")?:""
+
+    var confirmpass :String
+        set(value) {
+            spE.putString(constant.CONFIRMPASS,value).apply()
+        }
+        get() = sp.getString(constant.CONFIRMPASS, "")?:""
+
+    var university :String
+        set(value) {
+            spE.putString(constant.UNIVERSITY,value).apply()
+        }
+        get() = sp.getString(constant.UNIVERSITY, "")?:""
 }
