@@ -39,8 +39,8 @@ class AndroidVersionAdapter(private  val androidVersionList: List<AndroidVersion
 
         fun bind(androidVersion: AndroidVersion) = itemView.run {
             version.text = androidVersion.nama
-            type.text = androidVersion.password
-            api.text = androidVersion.version
+            type.text = androidVersion.version
+            api.text = androidVersion.api
         }
 
     }

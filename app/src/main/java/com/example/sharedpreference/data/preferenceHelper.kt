@@ -47,4 +47,8 @@ class preferenceHelper (app : Context){
             spE.putString(constant.UNIVERSITY,value).apply()
         }
         get() = sp.getString(constant.UNIVERSITY, "")?:""
+
+    fun logOut(){
+        spE.clear().apply()
+    }
 }

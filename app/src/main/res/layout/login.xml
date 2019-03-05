@@ -7,17 +7,31 @@
         android:layout_height="match_parent"
         tools:context=".activity.register">
 
-    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="LOGIN"
-              android:gravity="center" android:textSize="45dp" android:textStyle="bold" android:layout_marginTop="8dp"
+    <android.support.v7.widget.Toolbar
+            android:id="@+id/my_toolbarlogin"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@android:color/white"
+            app:navigationIcon="?attr/homeAsUpIndicator"
+            android:elevation="4dp"
+
+            app:title="Login"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="6dp" app:layout_constraintBottom_toTopOf="@+id/textView"/>
+
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Login"
+              android:gravity="center" android:textSize="30dp" android:textStyle="bold" android:layout_marginTop="8dp"
               app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
               android:layout_marginLeft="8dp" android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent"
               android:layout_marginEnd="8dp" android:layout_marginRight="8dp" android:layout_marginBottom="8dp"
-              app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.0"/>
+              app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.07999998"/>
     <TextView
-            android:id="@+id/username"
+            android:id="@+id/email"
             android:layout_width="match_parent"
-            android:layout_height="22dp"
-            android:text="Username"
+            android:layout_height="19dp"
+            android:text="Email"
             android:textStyle="bold"
             android:textSize="14dp"
 
@@ -33,10 +47,10 @@
     <EditText android:layout_width="match_parent"
               android:layout_height="wrap_content"
               android:id="@+id/tvUserLogin"
-              android:hint="username"
+              android:hint="email"
               app:layout_constraintStart_toStartOf="parent"
               android:layout_marginTop="8dp"
-              app:layout_constraintTop_toBottomOf="@+id/username" android:layout_marginBottom="8dp"
+              app:layout_constraintTop_toBottomOf="@+id/email" android:layout_marginBottom="8dp"
               app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
               android:layout_marginEnd="8dp" android:layout_marginRight="8dp" app:layout_constraintVertical_bias="0.0"
               android:layout_marginLeft="8dp" android:layout_marginStart="8dp"
